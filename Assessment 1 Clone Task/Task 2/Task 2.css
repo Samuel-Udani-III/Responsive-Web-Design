@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400&family=Lato:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #00540e;
+    color: #fff;
+}
+
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #00b92e;
+    color: #ffffff;
+}
+
+.navigation-bar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Teko', sans-serif;
+}
+
+.highlight {
+    color: #00efb0;
+}
+
+.navigation-list {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.navigation-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-button {
+    padding: 8px 16px;
+    font-weight: bold;
+    border: 2px solid #00ff91;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #eeeeee;
+}
+
+.film-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.film-card-1{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ff006f;
+}
+
+.film-card-2 {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color:#ff006f;
+    transform: translateX(-150px);
+}
+
+.film-card-3 {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color:#ff006f;
+    transform: translate(150px, -545px);
+}
+
+
+
+.film-card-1, .film-card-4, .film-card-5, .film-card-6 {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Place film-card-2 and film-card-3 side by side with a 16px gap */
+.film-card-2, .film-card-3 {
+    display: inline-flex;
+    max-width: 280px;
+}
+
+.film-card-2 {
+    margin-right: 16px;
+}
+
+.film-image {
+    width: 100%;
+    height: auto;
+}
+
+.film-details {
+    padding: 16px;
+    background-color: #006f38;
+}
+
+.film-details h2 {
+    font-size: 20px;
+    font-family: 'Teko', sans-serif;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.film-details p {
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.watch-button {
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Teko', sans-serif;
+    font-weight: bold;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.watch-button:hover {
+    background-color: #eee;
+}
+
+/* Style for specific taller movie cards */
+.film-card-4, .film-card-5, .film-card-6 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #4dccbd;
+    transform: translateY(-550px);
+}
+
+/* Ensure images are displayed on the left side for tall cards */
+.film-card-4 .film-image, .film-card-5 .film-image, .film-card-6 .film-image {
+    width: 50%;
+    height: auto;
+}
+
+/* Styling for film details in side-by-side layout */
+.film-card-4 .film-details, .film-card-5 .film-details, .film-card-6 .film-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.film-card-4 .film-details h2, .film-card-5 .film-details h2, .film-card-6 .film-details h2 {
+    font-size: 18px;
+    font-family: 'Teko', sans-serif;
+    margin-bottom: 8px;
+}
+
+.film-card-4 .film-details p, .film-card-5 .film-details p, .film-card-6 .film-details p {
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 16px;
+}
+
+/* Button styling */
+.film-card-4 .watch-button, .film-card-5 .watch-button, .film-card-6 .watch-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: 'Teko', sans-serif;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.film-card-4 .watch-button:hover, .film-card-5 .watch-button:hover, .film-card-6 .watch-button:hover {
+    background-color: #eee;
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    /* Container adjustments for tablet */
+    .film-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    /* Uniform size and layout for all film cards */
+    .film-card-1, .film-card-2, .film-card-3, .film-card-4, .film-card-5, .film-card-6 {
+        width: 100%;
+        height: 500px;
+        max-width: 100%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Ensures no weird overflow */
+        background-color: #086c3c;
+        transform: none
+    }
+
+    /* Consistent image sizing for all film cards */
+    .film-card-1 .film-image, 
+    .film-card-2 .film-image, 
+    .film-card-3 .film-image, 
+    .film-card-4 .film-image, 
+    .film-card-5 .film-image, 
+    .film-card-6 .film-image {
+        width: 100%;
+        height: 200px; /* Consistent height */
+        object-fit: cover;
+    }
+
+    /* Uniform text formatting for all film details */
+    .film-card-1 .film-details, 
+    .film-card-2 .film-details, 
+    .film-card-3 .film-details, 
+    .film-card-4 .film-details, 
+    .film-card-5 .film-details, 
+    .film-card-6 .film-details {
+        padding: 16px;
+    }
+
+    .film-card-1 .film-details h2, 
+    .film-card-2 .film-details h2, 
+    .film-card-3 .film-details h2, 
+    .film-card-4 .film-details h2, 
+    .film-card-5 .film-details h2, 
+    .film-card-6 .film-details h2 {
+        font-size: 20px;
+        font-family: 'Teko', sans-serif;
+        margin-bottom: 8px;
+        color: #333; /* Ensures consistent color */
+    }
+
+    .film-card-1 .film-details p, 
+    .film-card-2 .film-details p, 
+    .film-card-3 .film-details p, 
+    .film-card-4 .film-details p, 
+    .film-card-5 .film-details p, 
+    .film-card-6 .film-details p {
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+        color: #333;
+        margin-bottom: 16px;
+        width: 325px; /* Fixed width for the paragraph container */
+        height: 100px; /* Fixed height for consistent text space */
+        overflow: hidden; /* Prevents text from overflowing */
+        text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
+        white-space: normal; /* Ensures text wraps to new lines within the box */
+    }
+
+
+    /* Uniform button styling for all film cards */
+    .film-card-1 .watch-button, 
+    .film-card-2 .watch-button, 
+    .film-card-3 .watch-button, 
+    .film-card-4 .watch-button, 
+    .film-card-5 .watch-button
+    {
+        width: 340px; /* Makes button stretch fully */
+        margin-top: 80px;
+        padding: 10px;
+        font-size: 16px;
+        font-family: 'Teko', sans-serif;
+        font-weight: bold;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .film-card-6 .watch-button
+    {
+        width: 340px; /* Makes button stretch fully */
+        margin-top: 50px;
+        padding: 10px;
+        font-size: 16px;
+        font-family: 'Teko', sans-serif;
+        font-weight: bold;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .film-card-1 .watch-button:hover, 
+    .film-card-2 .watch-button:hover, 
+    .film-card-3 .watch-button:hover, 
+    .film-card-4 .watch-button:hover, 
+    .film-card-5 .watch-button:hover, 
+    .film-card-6 .watch-button:hover {
+        background-color: #eee;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 720px) {
+    /* Container adjustments for this specific breakpoint */
+    .film-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        align-items: center;
+    }
+
+    /* Uniform size and layout for all film cards */
+    .film-card-1, .film-card-2, .film-card-3, .film-card-4, .film-card-5, .film-card-6 {
+        width: 100%;
+        height: 500px;
+        max-width: 320px; /* Fixed width for consistent display */
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Prevent overflow issues */
+        background-color: #086c3c;
+        transform: none
+    }
+
+    /* Consistent image sizing for all film cards */
+    .film-card-1 .film-image, 
+    .film-card-2 .film-image, 
+    .film-card-3 .film-image, 
+    .film-card-4 .film-image, 
+    .film-card-5 .film-image, 
+    .film-card-6 .film-image {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        max-height: 180px; /* Ensures consistent height */
+        object-fit: cover;
+    }
+
+    /* Uniform text formatting for all film details */
+    .film-card-1 .film-details, 
+    .film-card-2 .film-details, 
+    .film-card-3 .film-details, 
+    .film-card-4 .film-details, 
+    .film-card-5 .film-details, 
+    .film-card-6 .film-details {
+        padding: 12px;
+    }
+
+    .film-card-1 .film-details h2, 
+    .film-card-2 .film-details h2, 
+    .film-card-3 .film-details h2, 
+    .film-card-4 .film-details h2, 
+    .film-card-5 .film-details h2, 
+    .film-card-6 .film-details h2 {
+        width: 500px;
+        font-size: 22px;
+        font-family: 'Teko', sans-serif;
+        margin-bottom: 8px;
+        color: #333; /* Consistent color */
+    }
+
+    .film-card-1 .film-details p, 
+    .film-card-2 .film-details p, 
+    .film-card-3 .film-details p, 
+    .film-card-4 .film-details p, 
+    .film-card-5 .film-details p, 
+    .film-card-6 .film-details p {
+        width: 300px;
+        font-size: 12px;
+        font-family: 'Lato', sans-serif;
+        color: #333;
+        margin-bottom: 12px;
+    }
+
+    /* Uniform button styling for all film cards */
+
+    .film-card-1 .watch-button
+    {
+        margin-top: 135px;
+        width: 295px; /* Full-width button for all cards */
+        padding: 8px;
+        font-size: 14px;
+        font-family: 'Teko', sans-serif;
+        font-weight: bold;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .film-card-2 .watch-button
+    {
+        margin-top: 120px;
+        width: 295px; /* Full-width button for all cards */
+        padding: 8px;
+        font-size: 14px;
+        font-family: 'Teko', sans-serif;
+        font-weight: bold;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .film-card-3 .watch-button
+    {
+        margin-top: 135px;
+        width: 295px; /* Full-width button for all cards */
+        padding: 8px;
+        font-size: 14px;
+        font-family: 'Teko', sans-serif;
+        font-weight: bold;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .film-card-4 .watch-button, 
+    .film-card-5 .watch-button
+     {
+        margin-top: 150px;
+        width: 295px; /* Full-width button for all cards */
+        padding: 8px;
+        font-size: 14px;
+        font-family: 'Teko', sans-serif;
+        font-weight: bold;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    
+
+    .film-card-6 .watch-button
+    {
+        margin-top: 135px;
+        width: 295px; /* Full-width button for all cards */
+        padding: 8px;
+        font-size: 14px;
+        font-family: 'Teko', sans-serif;
+        font-weight: bold;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .film-card-1 .watch-button:hover, 
+    .film-card-2 .watch-button:hover, 
+    .film-card-3 .watch-button:hover, 
+    .film-card-4 .watch-button:hover, 
+    .film-card-5 .watch-button:hover, 
+    .film-card-6 .watch-button:hover {
+        background-color: #eee;
+    }
+}
